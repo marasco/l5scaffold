@@ -1,15 +1,24 @@
-@extends('layout')
-@section('css')
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css" rel="stylesheet">
-@endsection
-@section('header')
-    <div class="page-header">
-        <h1><i class="glyphicon glyphicon-edit"></i> {{Class}} / Edit #{{${{classSingle}}->id}}</h1>
-    </div>
-@endsection
+@extends('layouts/admin')
 
 @section('content')
-    @include('error')
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        {{Class}} 
+        <small>Editar</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+        <div class="box">
+             
+            <div class="box-body">
+            @include('error')
 
     <div class="row">
         <div class="col-md-12">
@@ -20,18 +29,15 @@
 
                 {{content_fields}}
                 <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <a class="btn btn-link pull-right" href="{{ route('{{prefix}}{{class}}.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a class="btn btn-link pull-right" href="{{ route('{{prefix}}{{class}}.index') }}"><i class="glyphicon glyphicon-backward"></i>  Volver</a>
                 </div>
             </form>
 
         </div>
     </div>
-@endsection
-@section('scripts')
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
-  <script>
-    $('.date-picker').datepicker({
-    });
-  </script>
+    </div>
+    </div>
+    </section>
+    </div>
 @endsection
