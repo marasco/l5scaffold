@@ -1,13 +1,13 @@
 {
   "name": "laralib/l5scaffold",
-  "description": "Extend Laravel 5's generators scaffold.",
+  "description": "Extend Laravel 5's generators scaffold using AdminLTE2. Fork from Fernando Brito",
   "keywords": ["laravel", "generators", "scaffold" , "laravel5"],
   "license": "MIT",
   "minimum-stability": "dev",
   "authors": [
     {
-      "name": "Fernando Brito",
-      "email": "fernandobritofl@gmail.com"
+      "name": "Francisco Marasco",
+      "email": "francisco.marasco@gmail.com"
     }
   ],
   "require": {
