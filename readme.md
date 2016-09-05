@@ -3,6 +3,7 @@
 
 Hi, this is a scaffold generator for Laravel 5.2. (Laravel scaffold for Laravel 5.1? change branch to laravel-5.1 )
 
+This is a fork from Fernando Brito (laralib/l5scaffold)
 
 
 ## Usage
@@ -10,7 +11,7 @@ Hi, this is a scaffold generator for Laravel 5.2. (Laravel scaffold for Laravel 
 ### Step 1: Install Through Composer
 
 ```
-composer require 'laralib/l5scaffold' --dev
+composer require 'marasco/l5scaffold' --dev
 ```
 
 ### Step 2: Add the Service Provider
@@ -96,6 +97,7 @@ php artisan make:scaffold Tweet --prefix="admin"
 <br/><br/>
 ##Collaborators
  [Fernando Brito](https://github.com/fernandobritofl "fernandobritofl")
+ <br/>[Francisco Marasco](https://github.com/marasco "Marasco")
  <br/>[Sylvio Tavares](https://github.com/sylviot "Sylviot")
  <br/>[Raphael Heitor](https://github.com/raphaelheitor "raphaelheitor")
  <br/>[Alfred Nutile](https://github.com/alnutile "alnutile")
