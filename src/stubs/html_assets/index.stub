@@ -1,9 +1,7 @@
 @extends('layouts/admin')
 
 @section('content')
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
             {{Class}}
@@ -15,52 +13,48 @@
             <a class="btn btn-success pull-right" href="{{ route('{{prefix}}{{class}}.create') }}"><i class="glyphicon glyphicon-plus"></i> Nuevo Registro</a>
         </div>
     </section>
-    <!-- Main content -->
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-body">
-
-            @if(${{class}}->count())
-                <table class="table table-condensed table-striped with-datatables dt-responsive nowrap" width="100%">                    
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            {{header_fields}}
-                            <th class="text-right">*</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @foreach(${{class}} as ${{classSingle}})
-                            <tr>
-                                <td>{{${{classSingle}}->id}}</td>
-                                {{content_fields}}
-                                <td class="text-right">
-                                    <a class="btn btn-xs btn-primary" href="{{ route('{{prefix}}{{class}}.show', ${{classSingle}}->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
-                                    <a class="btn btn-xs btn-warning" href="{{ route('{{prefix}}{{class}}.edit', ${{classSingle}}->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
-                                    <form action="{{ route('{{prefix}}{{class}}.destroy', ${{classSingle}}->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Eliminar? Está seguro?')) { return true } else {return false };">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Eliminar</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                {!! ${{class}}->render() !!}
-            @else
-                <h3 class="text-center">
-                    Sin contenido!
-                </h3>
-            @endif
-
+                    @if(${{class}}->count())
+                        <table class="table table-condensed table-striped with-datatables dt-responsive nowrap" width="100%">                    
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    {{header_fields}}
+                                    <th class="text-right">*</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(${{class}} as ${{classSingle}})
+                                    <tr>
+                                        <td>{{${{classSingle}}->id}}</td>
+                                        {{content_fields}}
+                                        <td class="text-right">
+                                            <a class="btn btn-xs btn-primary" href="{{ route('{{prefix}}{{class}}.show', ${{classSingle}}->id) }}"><i class="glyphicon glyphicon-eye-open"></i> Ver</a>
+                                            <a class="btn btn-xs btn-warning" href="{{ route('{{prefix}}{{class}}.edit', ${{classSingle}}->id) }}"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+                                            <form action="{{ route('{{prefix}}{{class}}.destroy', ${{classSingle}}->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Eliminar? Está seguro?')) { return true } else {return false };">
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Eliminar</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        {!! ${{class}}->render() !!}
+                    @else
+                        <h3 class="text-center">
+                            Sin contenido!
+                        </h3>
+                    @endif
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
+    </section>
+</div>
 @endsection

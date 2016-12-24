@@ -371,7 +371,7 @@ class SyntaxBuilder
             return $this->AddColumn($field, 'controller', $meta);
         }, $schema);
 
-
+        //replace
         return implode("\n" . str_repeat(' ', 8), $fields);
     }
 
